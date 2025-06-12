@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunramics</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/services.css')}}">
+    </head>
+    
+</head>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            overflow-x: hidden; 
+            margin: 0;          
+        }
+    </style>
+    <header class="header">
+        <div class="slider">
+            <div class="slide slide-1 active">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-2">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-3">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-4">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-5">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-6">
+                <div class="overlay"></div>
+            </div>
+        </div> 
+
+            <div class="logo">
+                <img src="{{ url_for('static', filename = 'img/sunramics_logo.png')}}" alt="">
+            </div>
+
+            <div class="slider-dots">
+                <div class="dot active" onclick="setSlide(0)"></div>
+                <div class="dot" onclick="setSlide(1)"></div>
+                <div class="dot" onclick="setSlide(2)"></div>
+                <div class="dot" onclick="setSlide(3)"></div>
+                <div class="dot" onclick="setSlide(4)"></div>
+                <div class="dot" onclick="setSlide(5)"></div>
+            </div>
+
+            <div class="header-content">
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('home') }}" >Home</a></li>
+                        <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+                        <li><a href="{{ url_for('services') }}" class="active" >Services</a></li>
+                        <li><a href="{{ url_for('plates') }}">Plates</a></li>
+                        <li><a href="{{ url_for('vases') }}">Vases</a></li>
+                        <li><a href="{{ url_for('mugs') }}">Mugs</a></li>                        
+                    </ul>
+                </nav>
+            </div>
+
+
+            <div class="header-icons">
+                <a href="#">
+                    <i class="ri-shopping-bag-line"></i>
+                </a>
+                {% if session.get("email") %}
+                    <a href="{{ url_for('logout') }}">
+                        <i class="ri-logout-box-line"></i>
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">
+                        <i class="ri-user-fill"></i>
+                    </a>
+                {% endif %}
+            </div>      
+        </div>
+    </header>
+
+    <section class="main">
+        <section class="box1">
+            <img class="vase1" src= "{{ url_for('static', filename='img/services/vases1.png')}}" alt="vase1">
+            <img class="bean2" src= "{{ url_for('static', filename='img/services/bean2.png')}}" alt="bean2">
+            <img class="vase2" src= "{{ url_for('static', filename='img/services/vase.png')}}" alt="">
+
+            <div class="Servicestext">
+                    <button class="servicebttn">Services</button>
+                </a>
+            </div>
+
+            <p class="text1">Explore our range of pottery-making experiences and get more information about our services, find the one that suits you the best.</p>
+        </section>
+
+        <section class="box2">
+            <img class="line1" src= "{{ url_for('static', filename='img/services/line1.1.png')}}" alt="">
+            <img class="smlvase1" src= "{{ url_for('static', filename='img/services/vase1.1.png')}}" alt="">
+            <img class="flower1" src= "{{ url_for('static', filename='img/services/flower1.1.png')}}" alt="">
+            <h1>Our pottery sessions include</h1>
+            <div class="text1">
+                <p> <b class="boldone">1. </b>Step-by-step pottery instruction</p>
+            </div>
+        </section>
+
+        <section class="box3">
+            <img class="line2" src="{{ url_for('static', filename='img/services/line2.2.png')}}" alt="">
+            <img class="smlvase2" src= "{{ url_for('static', filename='img/services/vase2.2.png')}}"  alt="">
+            <img class="line3" src= "{{ url_for('static', filename='img/services/line3.3.png')}}"  alt="">
+            <img class="smlvase3" src= "{{ url_for('static', filename='img/services/vase3.3.png')}}" alt="">
+            <img class="heart1" src="{{ url_for('static', filename='img/services/heart1.1.png')}}" alt="">
+
+            <div class="text2" >
+                <p> <b class="boldtwo">2.</b> All necessary materials and tools</p>
+            </div>
+
+            <div class="text3">
+                <p> <b class="boldthree"> 3.</b> Firing and glazing service</p>
+            </div>
+
+            <div class="text4" >
+                <p><b class="boldfour"> 4.</b> Warm and comfortable working environment</p></p>
+            </div>
+        </section>
+
+        <section class="box4" >
+            <img class="vases1" src= "{{ url_for('static', filename='img/services/vazikner1.1.png')}}" alt="">
+            <img class="vases2" src= "{{ url_for('static', filename='img/services/vazikner2.2.png')}}" alt="">
+            <img class="vases3" src= "{{ url_for('static', filename='img/services/vazikner3.3.png')}}" alt="">
+
+            <h1>Our regular services include</h1>
+
+            <div class="corner1">Various types and flavours of <p>coffees.</p></div>
+
+            <div class="corner2"> A variety of desserts and cookies</div>
+
+            <div class="corner3">Comfortable work/study space</div>
+        </section>
+
+    </section>
+
+
+    <section class="box7">
+        <div class="text8">
+            <h1>Pottery pricing</h1>
+        </div>
+    
+        <div class="pricing-container">
+            <section class="pricebox">
+                <div class="texts">
+                        <h2>Mug & coffee</h2>
+                        <p>Make a mug and get a coffee as a compliment from our cafe</p>
+                        <p2 class="price">$24.99</p2>
+                </div>
+                
+                <a href="{{ url_for('calendar2') }}?scroll=service1">
+                    <button class="session">Book a session</button>
+                </a>                
+                
+            </section>
+    
+            <section class="pricebox">
+                <div class="texts">
+                    <h2>Plate & sweet</h2>
+                    <p>Make a plate and get a sweet as a compliment from our cafe</p>
+                    <p2 class="price">$24.99</p2>
+                </div>
+                
+                <a href="{{ url_for('calendar2') }}?scroll=service2">
+                    <button class="session">Book a session</button>
+                </a>                
+                
+            </section>
+    
+            <section class="pricebox">
+                <div class="texts">
+                    <h2>Vase & flower(s)</h2>
+                    <p>Make a vase and get a flower as a compliment from our cafe</p>
+                    <p2 class="price">$29.99</p2>
+                </div>
+                
+                <a href="{{ url_for('calendar2') }}?scroll=service3">
+                    <button class="session">Book a session</button>
+                </a>                
+                
+            </section>
+        </div>
+    </section>
+    
+
+
+
+
+
+    <section class="box8">
+    
+        <div class="pricing-container">
+            <section class="pricebox">
+                <div class="texts">
+                    <h2>Mug, Plate & Vase</h2>
+                    <p>Make your pottery in 3 sessions with the help of professionals</p>
+                    <p2 class="price">$59.99</p2>
+                </div>
+                
+                <a href="{{ url_for('calendar2') }}?scroll=service4">
+                    <button class="session">Book a session</button>
+                </a>                
+            </section>
+    
+            <section class="pricebox">
+
+                <div class="texts">
+                    <h2>Mug & Plate</h2>
+                    <p>Make a mug and a plate duo with the help of professionals</p>
+                    <p2 class="price">$34.99</p2>
+                </div>
+                <a href="{{ url_for('calendar2') }}?scroll=service5">
+                    <button class="session">Book a session</button>
+                </a>                                         
+            </section>
+    
+            <section class="pricebox">
+
+                <div class="texts">
+                    <h2>Individual art</h2>
+                    <p>Make a vase and get a flower as a compliment from our cafe</p>
+                    <p2 class="price">Varies</p2>
+                </div>
+                
+                <a href="{{ url_for('calendar2') }}?scroll=service6">
+                    <button class="session">Book a session</button>
+                </a>                                             
+            </section>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="contact-info">
+                <h3>Contact us:</h3>
+                <p>Phone: +374-55-14-15-96</p>
+                <p>Instagram: @sunramics_coffee</p>
+                <p>E-mail: Sunramics_coffee@gmail.com</p>
+            </div>
+            <div class="operating-hours">
+                <h3>Operating Hours:</h3> <br>
+                <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+                <p>Saturday - Sunday: 10:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Connected JS Files -->
+    <script src="{{ url_for('static', filename = 'js/slider.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/calendar2.js') }}" defer></script>
+</body>
+
+</html>
+
+
+
+

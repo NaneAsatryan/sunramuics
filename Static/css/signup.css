@@ -1,0 +1,180 @@
+.loginbox2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 460px;
+    height: 500px;
+    background-color: rgba(226, 224, 221, 0.8);
+    border-radius: 60px;
+}
+
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/login/backgroundimage.png); 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.opacity {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #CFD0D0;
+    opacity: 50%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.loginbox2 p{
+    position: relative;
+    justify-content: center;
+    text-align:center;
+    font-size: 15px;
+    position:absolute;
+    bottom: 20px;
+    color: #706665;
+}
+
+.loginbox2 a{  
+    color: #4E3622;
+}
+
+.email {
+    position: absolute;
+    width: 350px;
+    height: 65px;
+    padding-left: 40px;
+    background-color: #B3AAA5;
+    text-decoration: none;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Balsamiq Sans';
+    font-size: 20px;
+    outline: none;
+    color: #dedede;
+    text-shadow: 2px 2px #7b7b7b;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 130px;
+    z-index: 10;
+}
+
+
+.username2 {
+    position: absolute;
+    padding-left: 40px;
+    top: 210px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 350px;
+    height: 65px;
+    background-color: #B3AAA5;
+    text-decoration: none;
+    color: #dedede;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Balsamiq Sans';
+    font-size: 20px;
+    text-shadow: 2px 2px #7b7b7b;
+    outline: none;
+}
+
+
+.password2 {
+    position: absolute;
+    padding-left: 40px;
+    top: 290px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 350px;
+    height: 65px;
+    background-color: #B3AAA5;
+    text-decoration: none;
+    color: #dedede;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Balsamiq Sans';
+    font-size: 20px;
+    text-shadow: 2px 2px #7b7b7b;
+    outline: none;
+}
+
+input::placeholder{
+    position: absolute;
+    color: #E2E0DD;
+    left: 40px;
+}
+
+.login2{
+    position:relative;
+    justify-content: center;
+    text-align: center;
+    width: 375px;
+    height: 70px;
+    font-size: 30px;
+    background-color: #706665;
+    border:none;
+    font-family: 'Superkind';
+    color: #E2E0DD;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 50px;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.login2:hover {
+background-color: #514948;
+box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.gazar {
+    position: absolute;
+    top: 30px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #E2E0DD;
+    background-color: #E2E0DD;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 99;
+}
+
+.gazar img {
+    height: 45px;
+    width: 45px;
+}
+
+.gazar img{
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunramics</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+        }
+    </style>
+
+    <header class="header">
+        <div class="slider">
+            <div class="slide slide-1 active">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-2">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-3">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-4">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-5">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-6">
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/sunramics_logo.png') }}" alt="">
+        </div>
+
+        <div class="slider-dots">
+            <div class="dot active" onclick="setSlide(0)"></div>
+            <div class="dot" onclick="setSlide(1)"></div>
+            <div class="dot" onclick="setSlide(2)"></div>
+            <div class="dot" onclick="setSlide(3)"></div>
+            <div class="dot" onclick="setSlide(4)"></div>
+            <div class="dot" onclick="setSlide(5)"></div>
+        </div>
+
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                    <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}">Services</a></li>
+                    <li><a href="{{ url_for('plates') }}">Plates</a></li>
+                    <li><a href="{{ url_for('vases') }}">Vases</a></li>
+                    <li><a href="{{ url_for('mugs') }}">Mugs</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-icons">
+            <a href="#"><i class="ri-shopping-bag-line"></i></a>
+            {% if session.get("email") %}
+            <a href="{{ url_for('logout') }}"><i class="ri-logout-box-line"></i></a>
+            {% else %}
+            <a href="{{ url_for('login') }}"><i class="ri-user-fill"></i></a>
+            {% endif %}
+        </div>
+    </header>
+
+    <section class="main">
+        <section class="box1">
+            <img class="coffbn1" src="{{ url_for('static', filename='img/homepage/coffbn11.png') }}" alt="">
+            <img class="coffbn2" src="{{ url_for('static', filename='img/homepage/coffbn222.png') }}" alt="">
+            <div class="text1">
+                <h1>Welcome to Sunramics!</h1>
+                <p>
+                    Studio where you can create personalized pottery and enjoy a cup of coffee. Whether you're a
+                    beginner or an experienced potter, Sunramics is for YOU!
+                </p>
+            </div>
+            <div class="button1">
+                <a href="{{ url_for('about_us') }}"><button class="about-btn">About us</button></a>
+            </div>
+        </section>
+
+        <section class="box2">
+            <img class="sunflower1" src="{{ url_for('static', filename='img/aboutus/sunflower1.png') }}">
+            <div class="text2">
+                <p>
+                    Craft your own mug or plate. After two days of firing and glazing, pick up your creation and enjoy a
+                    complimentary coffee or snack served in your handmade piece
+                </p>
+            </div>
+            <div class="button2">
+                <a href="{{ url_for('services') }}"><button class="services-btn">Discover our <br> Services</button></a>
+            </div>
+        </section>
+
+        <section class="box3">
+            <img class="coffbn3" src="{{ url_for('static', filename='img/homepage/coffbn333.png') }}" alt="">
+            <img class="line1" src="{{ url_for('static', filename='img/homepage/line 1.png') }}" alt="">
+            <div class="text3">
+                <h1>How it works?</h1>
+                <p><b class="boldone">1. </b>Book Your Session: Select a perfect time for you during the day</p>
+            </div>
+        </section>
+
+        <section class="box4">
+            <img class="heart1" src="{{ url_for('static', filename='img/homepage/heart11.png') }}" alt="">
+            <div class="text4">
+                <p><b class="boldtwo"> 2. </b>Create Your Pottery: your unique mug, vase or plate </p>
+            </div>
+        </section>
+
+        <section class="box5">
+            <img class="coffbn4" src="{{ url_for('static', filename='img/homepage/coffeebeannn.png') }}" alt="">
+            <img class="line2" src="{{ url_for('static', filename='img/homepage/line 2.png') }}" alt="">
+            <div class="text5">
+                <p><b class="boldthree"> 3. </b>Leave your creation with us for two days for firing and glazing.</p>
+            </div>
+        </section>
+
+        <section class="box6">
+            <img class="coffbn5" src="{{ url_for('static', filename='img/homepage/coffeebean444.png') }}" alt="">
+            <img class="line3" src="{{ url_for('static', filename='img/homepage/line 3.png') }}" alt="">
+            <img class="line4" src="{{ url_for('static', filename='img/homepage/line-4.png') }}">
+            <div class="text6">
+                <p><b class="boldfour"> 4. </b>Pick Up & Enjoy: Collect your pottery and get a free coffee or snack
+                    served in/on your masterpiece.</p>
+            </div>
+            <div class="text7">
+                <p>(Or just buy coffee or sweets without touching any clay)</p>
+            </div>
+        </section>
+
+        <section class="box7">
+            <div class="text8">
+                <h1>Pottery pricing</h1>
+            </div>
+            <div class="pricing-container">
+                <section class="pricebox">
+                    <div class="texts">
+                        <h2>Mug & coffee</h2>
+                        <p>Make a mug and get a coffee as a compliment from our cafe</p>
+                        <p2 class="price">$24.99</p2>
+                    </div>
+                    <a href="{{ url_for('calendar2') }}?scroll=service1"><button class="session">Book a
+                            session</button></a>
+                </section>
+
+                <section class="pricebox">
+                    <div class="texts">
+                        <h2>Plate & sweet</h2>
+                        <p>Make a plate and get a sweet as a compliment from our cafe</p>
+                        <p2 class="price">$24.99</p2>
+                    </div>
+                    <a href="{{ url_for('calendar2') }}?scroll=service2"><button class="session">Book a
+                            session</button></a>
+                </section>
+
+                <section class="pricebox">
+                    <div class="texts">
+                        <h2>Vase & flower(s)</h2>
+                        <p>Make a vase and get a flower as a compliment from our cafe</p>
+                        <p2 class="price">$29.99</p2>
+                    </div>
+                    <a href="{{ url_for('calendar2') }}?scroll=service3"><button class="session">Book a
+                            session</button></a>
+                </section>
+            </div>
+        </section>
+
+        <section class="box8">
+            <div class="pricing-container">
+                <section class="pricebox">
+                    <div class="texts">
+                        <h2>Mug, Plate & Vase</h2>
+                        <p>Make your pottery in 3 sessions with the help of professionals</p>
+                        <p2 class="price">$59.99</p2>
+                    </div>
+                    <a href="{{ url_for('calendar2') }}?scroll=service4"><button class="session">Book a
+                            session</button></a>
+                </section>
+
+                <section class="pricebox">
+                    <div class="texts">
+                        <h2>Mug & Plate</h2>
+                        <p>Make a mug and a plate duo with the help of professionals</p>
+                        <p2 class="price">$34.99</p2>
+                    </div>
+                    <a href="{{ url_for('calendar2') }}?scroll=service5"><button class="session">Book a
+                            session</button></a>
+                </section>
+
+                <section class="pricebox">
+                    <div class="texts">
+                        <h2>Individual art</h2>
+                        <p>Make a vase and get a flower as a compliment from our cafe</p>
+                        <p2 class="price">Varies</p2>
+                    </div>
+                    <a href="{{ url_for('calendar2') }}?scroll=service6"><button class="session">Book a
+                            session</button></a>
+                </section>
+            </div>
+        </section>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="contact-info">
+                <h3>Contact us:</h3>
+                <p>Phone: +374-55-14-15-96</p>
+                <p>Instagram: @sunramics_coffee</p>
+                <p>E-mail: Sunramics_coffee@gmail.com</p>
+            </div>
+            <div class="operating-hours">
+                <h3>Operating Hours:</h3><br>
+                <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+                <p>Saturday - Sunday: 10:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+</body>
+
+</html>

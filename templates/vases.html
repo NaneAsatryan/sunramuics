@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunramics</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/plates.css')}}">
+</head>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+        }
+    </style>
+    <header class="header">
+        <div class="slider">
+            <div class="slide slide-1 active">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-2">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-3">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-4">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-5">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide slide-6">
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="logo">
+            <img src="{{ url_for('static', filename = 'img/sunramics_logo.png')}}" alt="">
+        </div>
+
+        <div class="slider-dots">
+            <div class="dot active" onclick="setSlide(0)"></div>
+            <div class="dot" onclick="setSlide(1)"></div>
+            <div class="dot" onclick="setSlide(2)"></div>
+            <div class="dot" onclick="setSlide(3)"></div>
+            <div class="dot" onclick="setSlide(4)"></div>
+            <div class="dot" onclick="setSlide(5)"></div>
+        </div>
+
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}">Services</a></li>
+                    <li><a href="{{ url_for('plates') }}">Plates</a></li>
+                    <li><a href="{{ url_for('vases') }}" class="active">Vases</a></li>
+                    <li><a href="{{ url_for('mugs') }}">Mugs</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-icons">
+            <a href="#">
+                <i class="ri-shopping-bag-line"></i>
+            </a>
+            {% if session.get("email") %}
+            <a href="{{ url_for('logout') }}">
+                <i class="ri-logout-box-line"></i>
+            </a>
+            {% else %}
+            <a href="{{ url_for('login') }}">
+                <i class="ri-user-fill"></i>
+            </a>
+            {% endif %}
+        </div>
+        </div>
+    </header>
+
+    <section class="main">
+        <div class="row1">
+            <div class="left-row1">
+                <div class="category">Light</div>
+            </div>
+
+            <div class="right-row1">
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase1.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase2.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase3.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row1">
+            <div class="sunflower">
+                <img class="flower" src="{{ url_for('static', filename='img/plates_/sunflower.png')}}" alt="">
+            </div>
+            <div class="left-row1">
+                <div class="category">Dark</div>
+                <img class="vazik1" src="{{ url_for('static', filename='img/plates_/vazik1.png')}}" alt="">
+            </div>
+
+            <div class="right-row1">
+                <div class="plate1">
+                    <img class="bestsell" src="{{ url_for('static', filename='img/plates_/bestsell1.png')}}" alt="">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase4.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase5.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase6.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row1">
+            <div class="left-row1">
+                <div class="category">Unique</div>
+            </div>
+
+            <div class="right-row1">
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase7.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase8.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="bestsell5" src="{{ url_for('static', filename='img/plates_/bestsell1.png')}}"
+                            alt="">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase9.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row1">
+            <div class="left-row1">
+                <div class="category">Cow</div>
+                <img class="vazik2" src="{{ url_for('static', filename='img/plates_/vazikner2.png')}}" alt="">
+            </div>
+
+            <div class="right-row1">
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase10.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase11.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+
+                <div class="plate1">
+                    <div class="img-border">
+                        <img class="img1" src="{{ url_for('static', filename='img/plates_/vase12.png')}}"
+                            alt="Plate Image">
+                    </div>
+                    <span class="price">$20</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="contact-info">
+                <h3>Contact us:</h3>
+                <p>Phone: +374-55-14-15-96</p>
+                <p>Instagram: @sunramics_coffee</p>
+                <p>E-mail: Sunramics_coffee@gmail.com</p>
+            </div>
+            <div class="operating-hours">
+                <h3>Operating Hours:</h3> <br>
+                <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+                <p>Saturday - Sunday: 10:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Connected JS Files -->
+    <script src="{{ url_for('static', filename = 'js/slider.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunramics</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/signup.css')}}">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}">Services</a></li>
+                    <li><a href="{{ url_for('plates') }}">Plates</a></li>
+                    <li><a href="{{ url_for('vases') }}">Vases</a></li>
+                    <li><a href="{{ url_for('mugs') }}">Mugs</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-icons">
+            <a href="cart.html">
+                <i class="ri-shopping-bag-line"></i>
+            </a>
+            <a href="{{ url_for('login') }}">
+                <i class="ri-user-fill"></i>
+            </a>
+        </div>
+
+        <div class="mainbox">
+            <div class="opacity">
+                <div class="background"> </div>
+
+            </div>
+
+            <div class="loginbox2">
+                <div class="gazar">
+                    <img src="{{ url_for('static', filename='img/login/picture.png') }}">
+                </div>
+            
+                <form method="POST" action="{{ url_for('signup') }}">
+                    <div class="loginbox2">
+                        <input type="text" placeholder="E-mail" class="email" name="email" required>
+                        <input type="text" placeholder="Username" class="username2" name="username" required>
+                        <input type="password" placeholder="Password" class="password2" name="password" required>
+                        <button type="submit" class="login2">Sign up!</button>
+                    </div>
+                </form>
+            
+                <p>Already have an account? <a href="{{ url_for('login') }}">Log in!</a></p>
+            </div>                   
+    </header>
+</body>

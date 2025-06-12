@@ -1,0 +1,161 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    /* Теперь блоки идут сверху вниз */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.box1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 380px;
+    background-color: #E1DED9;
+    padding: 20px;
+}
+
+.box1 h1 {
+    font-size: 43px;
+    color: #4E443D;
+    font-family: 'Super Kind', sans-serif;
+    margin-bottom: 50px;
+    margin-top: -25px;
+}
+
+.box1 p {
+    font-size: 30px;
+    color: #615246;
+    margin-left: 150px;
+    margin-right: 150px;
+    line-height: 1.5;
+}
+
+.box1 b {
+    color: #4E3622;
+}
+
+.coffbn1 {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 100px;
+    height: auto;
+}
+
+.coffbn2 {
+    position: absolute;
+    top: 40px;
+    right: 120px;
+    width: 90px;
+    height: auto;
+}
+
+.box2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 380px;
+    background-color: #F9F8F8;
+    padding: 20px;
+}
+
+.heart1 {
+    position: absolute;
+    top: -100px;
+    left: 30px;
+    width: 180px;
+    height: auto;
+}
+
+.coffbn3 {
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    width: 100px;
+    height: auto;
+}
+
+.mugs1 {
+    position: absolute;
+    top: 320.5px;
+    right: 0px;
+    width: 850px;
+    height: auto;
+}
+
+.box2 p {
+    font-size: 30px;
+    color: #615246;
+    margin-left: 300px;
+    margin-right: 300px;
+    line-height: 1.5;
+}
+
+.box3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 380px;
+    background-color: #B2A8A3;
+    padding: 20px;
+}
+
+.box3 h1 {
+    font-size: 43px;
+    color: #4E443D;
+    font-family: 'Super Kind', sans-serif;
+    margin-bottom: 50px;
+    margin-top: -25px;
+}
+
+.box3 p {
+    font-size: 30px;
+    color: #E2E2E2;
+    margin-left: 200px;
+    margin-right: 200px;
+    line-height: 1.5;
+}
+
+.sunflower1 {
+    position: absolute;
+    top: -100px;
+    left: -10px;
+    width: 120px;
+    height: auto;
+}
+
+.coffbn4 {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    width: 70px;
+    height: auto;
+}
+
+.coffbn5 {
+    position: absolute;
+    bottom: -37px;
+    left: 60px;
+    width: 100px;
+    height: auto;
+}
+
+
+
+
